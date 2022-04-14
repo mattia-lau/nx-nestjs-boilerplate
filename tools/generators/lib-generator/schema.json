@@ -10,6 +10,10 @@
         "$source": "argv",
         "index": 0
       }
+    },
+    "importPath": {
+      "type": "string",
+      "description": "The library name used to import it, like `@myorg/my-awesome-lib`. Must be a valid npm name."
     }
   },
   "required": ["name"]

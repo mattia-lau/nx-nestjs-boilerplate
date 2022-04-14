@@ -1,0 +1,44 @@
+{
+  "root": "libs/math",
+  "sourceRoot": "libs/math/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "project": "libs/math/tsconfig.build.json",
+        "commands": [
+          {
+            "command": "yarn tsc"
+          }
+        ]
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "path": "libs/math/tsconfig.build.json",
+        "config": "libs/math/nest-cli.json",
+        "commands": [
+          {
+            "command": "yarn nest start --watch"
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": ["coverage/libs/math"],
+      "options": {
+        "config": "libs/math/jest.config.js",
+        "passWithNoTests": true,
+        "commands": [
+          {
+            "command": "yarn jest"
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}

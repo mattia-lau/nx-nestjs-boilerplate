@@ -19,4 +19,10 @@ describe('AppService', () => {
       });
     });
   });
+
+  describe('sum', () => {
+    it('should return 3', () => {
+      expect(service.sum(1,2)).toEqual(3);
+    });
+  });
 });

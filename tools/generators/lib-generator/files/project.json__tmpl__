@@ -1,0 +1,44 @@
+{
+  "root": "libs/<%= name %>",
+  "sourceRoot": "libs/<%= name %>/src",
+  "projectType": "application",
+  "targets": {
+     "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "project": "libs/<%= name %>/tsconfig.build.json",
+        "commands": [
+          {
+            "command": "yarn tsc"
+          }
+        ]
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "path": "libs/<%= name %>/tsconfig.build.json",
+        "config": "libs/<%= name %>/nest-cli.json",
+        "commands": [
+          {
+            "command": "yarn nest start --watch"
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": ["coverage/libs/<%= name %>"],
+      "options": {
+        "config": "libs/<%= name %>/jest.config.js",
+        "passWithNoTests": true,
+        "commands": [
+          {
+            "command": "yarn jest"
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}
