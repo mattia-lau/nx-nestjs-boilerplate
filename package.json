@@ -1,0 +1,72 @@
+{
+  "name": "nx-nestjs-starter",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "mattia lau"
+  },
+  "repository": {
+    "url": "https://github.com/mattia-lau/nx-nestjs-boilerplate",
+    "type": "git"
+  },
+  "keywords": [
+    "monorepo",
+    "nx",
+    "nx nestjs"
+  ],
+  "scripts": {
+    "start": "nx run-many --target=serve --all",
+    "build": "nx run-many --target=build --all",
+    "test": "nx run-many --target=test --all",
+    "test-e2e": "nx run-many --target=test-e2e --all",
+    "prepare": "husky install",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
+  },
+  "private": true,
+  "dependencies": {
+    "@nestjs/common": "^8.4.4",
+    "@nestjs/core": "^8.4.4",
+    "@nestjs/platform-express": "^8.4.4",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.5.5",
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^8.2.5",
+    "@nestjs/schematics": "^8.0.10",
+    "@nestjs/testing": "^8.4.4",
+    "@nrwl/cli": "13.10.2",
+    "@nrwl/eslint-plugin-nx": "13.10.2",
+    "@nrwl/jest": "13.10.2",
+    "@nrwl/linter": "13.10.2",
+    "@nrwl/node": "13.10.2",
+    "@nrwl/workspace": "13.10.2",
+    "@types/jest": "27.0.2",
+    "@types/node": "16.11.7",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "jest": "27.2.3",
+    "lint-staged": "^12.3.7",
+    "nx": "13.10.2",
+    "prettier": "^2.5.1",
+    "supertest": "^6.2.2",
+    "ts-jest": "27.0.5",
+    "typescript": "~4.6.2"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json,yml}": [
+      "prettier --write "
+    ],
+    "**/*.{ts,tsx}": [
+      "eslint --fix"
+    ]
+  }
+}

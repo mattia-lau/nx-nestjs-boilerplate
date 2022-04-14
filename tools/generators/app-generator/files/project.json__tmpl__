@@ -1,0 +1,58 @@
+{
+  "root": "apps/<%= name %>",
+  "sourceRoot": "apps/<%= name %>/src",
+  "projectType": "application",
+  "targets": {
+     "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "path": "apps/<%= name %>/tsconfig.build.json",
+        "config": "apps/<%= name %>/nest-cli.json",
+        "commands": [
+          {
+            "command": "yarn nest build"
+          }
+        ]
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "path": "apps/<%= name %>/tsconfig.build.json",
+        "config": "apps/<%= name %>/nest-cli.json",
+        "commands": [
+          {
+            "command": "yarn nest start --watch"
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": ["coverage/apps/<%= name %>"],
+      "options": {
+        "config": "apps/<%= name %>/jest.config.js",
+        "passWithNoTests": true,
+        "commands": [
+          {
+            "command": "yarn jest"
+          }
+        ]
+      }
+    },
+    "test-e2e": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": ["coverage/apps/<%= name %>"],
+      "options": {
+        "config": "apps/<%= name %>/test/jest-e2e.json",
+        "passWithNoTests": true,
+        "commands": [
+          {
+            "command": "yarn jest"
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}
