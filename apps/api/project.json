@@ -44,7 +44,9 @@
       "executor": "@nrwl/workspace:run-commands",
       "outputs": ["coverage/apps/api"],
       "options": {
-        "config": "apps/api/test/jest-e2e.json",
+        "config": "apps/api/jest.config.js",
+        "testRegex": ".e2e-spec.ts$",
+        "rootDir": "apps/api/test",
         "passWithNoTests": true,
         "commands": [
           {

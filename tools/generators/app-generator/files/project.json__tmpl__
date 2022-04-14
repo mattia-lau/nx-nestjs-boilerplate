@@ -44,7 +44,9 @@
       "executor": "@nrwl/workspace:run-commands",
       "outputs": ["coverage/apps/<%= name %>"],
       "options": {
-        "config": "apps/<%= name %>/test/jest-e2e.json",
+        "config": "apps/<%= name %>/jest.config.js",
+        "testRegex": ".e2e-spec.ts$",
+        "rootDir": "apps/<%= name %>/test",
         "passWithNoTests": true,
         "commands": [
           {
